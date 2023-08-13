@@ -5,7 +5,7 @@ const searchInput = document.querySelector("input#search");
 searchInput.addEventListener("input", async () => {
   resetSearchSuggestions();
   const searchWord = searchInput.value;
-  console.log(searchWord);
+  if (!searchWord) return;
   const url = `http://api.weatherapi.com/v1/search.json?key=${API_KEY}&q=${searchWord}`;
   const response = await fetch(url, { mode: "cors" });
   const data = await response.json();
