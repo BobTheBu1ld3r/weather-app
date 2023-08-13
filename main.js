@@ -3,15 +3,16 @@ const API_KEY = "ff89deb859334f57bbb115524233107";
 const searchInput = document.querySelector("input#search");
 
 searchInput.addEventListener("input", async () => {
+  resetSearchSuggestions();
   const searchWord = searchInput.value;
   console.log(searchWord);
   const url = `http://api.weatherapi.com/v1/search.json?key=${API_KEY}&q=${searchWord}`;
   const response = await fetch(url, { mode: "cors" });
   const data = await response.json();
-  renderSearchOptions(data);
+  renderSearchSuggestions(data);
 });
 
-function renderSearchOptions(data) {
+function renderSearchSuggestions(data) {
   const searchContainer = document.querySelector(".search-container");
 
   for (let suggestion of data) {
@@ -34,4 +35,13 @@ function renderSearchOptions(data) {
 
     searchContainer.appendChild(newSearchSuggestionEl);
   }
+}
+
+function resetSearchSuggestions() {
+  const searchContainer = document.querySelector(".search-container");
+  const searchSuggestions = document.querySelectorAll(".search-suggestion");
+  console.log(searchSuggestions);
+  searchSuggestions.forEach((el) => {
+    searchContainer.removeChild(el);
+  });
 }
