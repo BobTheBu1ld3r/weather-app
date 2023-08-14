@@ -68,8 +68,56 @@ input#search {
   content: ",";
 }
 
+h3 {
+  font-size: 44px;
+  font-weight: 500;
+}
+
 h5 {
   font-size: 24px;
   font-weight: 700;
+  margin: 0;
+}
+
+h6 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.subtitle-1 {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.body-1 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.body-2 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.white-color-1 {
   color: var(--white-color-1);
+}
+
+.white-color-2 {
+  color: var(--white-color-2);
+}
+
+.grey-bcg-1 {
+  background-color: var(--grey-bcg-1);
+}
+.grey-bcg-2 {
+  background-color: var(--grey-bcg-2);
+}
+.grey-bcg-3 {
+  background-color: var(--grey-bcg-3);
+}
+
+.grey-accent-1 {
+  background-color: var(--grey-accent-1);
 }
