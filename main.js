@@ -20,17 +20,23 @@ function renderSearchSuggestions(data) {
     newSearchSuggestionEl.classList.add("search-suggestion");
 
     const suggestionName = suggestion.name;
+    const suggestionRegion = suggestion.region;
     const suggestionCountry = suggestion.country;
 
     const newSuggestionNameEl = document.createElement("div");
     newSuggestionNameEl.classList.add("suggestion-name");
     newSuggestionNameEl.textContent = suggestionName;
 
+    const newSuggestionRegionEl = document.createElement("div");
+    newSuggestionRegionEl.classList.add("suggestion-name");
+    newSuggestionRegionEl.textContent = suggestionRegion;
+
     const newSuggestionCountryEl = document.createElement("div");
     newSuggestionCountryEl.classList.add("suggestion-country");
     newSuggestionCountryEl.textContent = suggestionCountry;
 
     newSearchSuggestionEl.appendChild(newSuggestionNameEl);
+    newSearchSuggestionEl.appendChild(newSuggestionRegionEl);
     newSearchSuggestionEl.appendChild(newSuggestionCountryEl);
 
     searchContainer.appendChild(newSearchSuggestionEl);
@@ -40,7 +46,6 @@ function renderSearchSuggestions(data) {
 function resetSearchSuggestions() {
   const searchContainer = document.querySelector(".search-container");
   const searchSuggestions = document.querySelectorAll(".search-suggestion");
-  console.log(searchSuggestions);
   searchSuggestions.forEach((el) => {
     searchContainer.removeChild(el);
   });
