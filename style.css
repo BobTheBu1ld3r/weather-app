@@ -1,3 +1,12 @@
+:root {
+  --grey-bcg-1: #333;
+  --grey-bcg-2: #282828;
+  --grey-bcg-3: #1c1c1c;
+  --grey-accent-1: #666666;
+  --white-color-1: #eeeeee;
+  --white-color-2: #cccccc;
+}
+
 html {
   box-sizing: border-box;
 }
