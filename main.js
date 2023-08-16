@@ -13,7 +13,7 @@ searchInput.addEventListener("input", async () => {
 });
 
 function renderSearchSuggestions(data) {
-  const searchContainer = document.querySelector(".search-container");
+  const searchContainer = document.querySelector(".suggestion-container");
 
   for (let suggestion of data) {
     const newSearchSuggestionEl = document.createElement("div");
@@ -44,9 +44,6 @@ function renderSearchSuggestions(data) {
 }
 
 function resetSearchSuggestions() {
-  const searchContainer = document.querySelector(".search-container");
-  const searchSuggestions = document.querySelectorAll(".search-suggestion");
-  searchSuggestions.forEach((el) => {
-    searchContainer.removeChild(el);
-  });
+  const suggestionContainer = document.querySelector(".suggestion-container");
+  suggestionContainer.innerHTML = "";
 }
