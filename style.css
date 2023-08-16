@@ -91,6 +91,7 @@ input#search {
   justify-content: space-evenly;
   gap: 35px;
   margin-top: 16px;
+  margin-bottom: 31px;
 }
 
 .hour-container {
@@ -167,12 +168,20 @@ h6,
   font-weight: 400;
 }
 
+.body-3 {
+  font-size: 14px;
+  font-weight: 500;
+}
 .white-color-1 {
   color: var(--white-color-1);
 }
 
 .white-color-2 {
   color: var(--white-color-2);
+}
+
+.weather-info-container span {
+  color: white;
 }
 
 .grey-bcg-1 {
