@@ -141,6 +141,53 @@ input#search {
   margin: auto;
   border-radius: 0 0 8px 8px;
   background-color: var(--grey-bcg-2);
+
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+}
+
+.day-info-container:first-of-type {
+  background-color: var(--grey-bcg-1);
+  border-top: 1px solid var(--grey-accent-1);
+}
+
+.day-info-container:first-of-type .day {
+  color: var(--white-color-1);
+}
+
+.day-info-container:first-of-type .day-max-temp {
+  color: var(--white-color-1);
+}
+
+.day-info-container:first-of-type .day-min-temp {
+  color: var(--white-color-1);
+}
+
+.day-info-container {
+  height: 100%;
+  width: 81px;
+
+  padding-top: 9px;
+
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-content: start;
+  border-top: 1px solid var(--grey-bcg-1);
+}
+
+.day-info-container + .day-info-container {
+  border-left: 1px solid var(--grey-bcg-1);
+}
+
+.day {
+  color: var(--white-color-2);
+  margin: 0;
+}
+
+.day-icon {
+  margin: 4px 0;
 }
 
 h3 {
