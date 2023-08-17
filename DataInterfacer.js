@@ -16,4 +16,29 @@ export default class DataInterfacer {
       };
     });
   }
+
+  dailyForecastParser(data) {
+    const forecastArray = data.forecast.forecastday;
+    return forecastArray.map((forecastday) => {
+      console.log(forecastday.date);
+      return {
+        dayOfWeek: getDayOfWeek(forecastday.date),
+        iconUrl: forecastday.day.condition.icon,
+        maxTemp: forecastday.day.maxtemp_c,
+        minTemp: forecastday.day.mintemp_c,
+      };
+    });
+  }
+}
+
+function getDayOfWeek(date) {
+  const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  const timestamp = Date.parse(date);
+  console.log(timestamp);
+  const parsedDate = new Date(timestamp);
+  const dayIndex = parsedDate.getDay();
+  console.log(dayIndex);
+  const dayOfWeek = DAYS[dayIndex];
+  return dayOfWeek;
 }
