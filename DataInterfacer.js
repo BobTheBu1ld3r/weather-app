@@ -23,12 +23,14 @@ export default class DataInterfacer {
       console.log(forecastday.date);
       return {
         dayOfWeek: getDayOfWeek(forecastday.date),
-        iconUrl: forecastday.day.condition.icon,
+        iconUrl: forecastday.day.condition.icon.slice(2),
         maxTemp: forecastday.day.maxtemp_c,
         minTemp: forecastday.day.mintemp_c,
       };
     });
   }
+
+  hourlyForecastParser(data) {}
 }
 
 function getDayOfWeek(date) {
