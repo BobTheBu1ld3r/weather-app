@@ -1,3 +1,6 @@
+import ClickHandler from "./ClickHandler.js";
+const clickHandler = new ClickHandler();
+
 export default class ScreenController {
   renderSearchSuggestions(data) {
     const suggestionContainer = document.querySelector(".suggestion-container");
@@ -5,11 +8,14 @@ export default class ScreenController {
     for (let location of data) {
       const newSearchSuggestionEl = document.createElement("div");
       newSearchSuggestionEl.classList.add("search-suggestion");
+      newSearchSuggestionEl.textContent = location.infoString;
+      newSearchSuggestionEl.dataset.url = location.url;
+      newSearchSuggestionEl.dataset.infoString = location.infoString;
 
-      const newSuggestionNameEl = document.createElement("div");
-      newSuggestionNameEl.textContent = location.infoString;
-
-      newSearchSuggestionEl.appendChild(newSuggestionNameEl);
+      newSearchSuggestionEl.addEventListener(
+        "click",
+        clickHandler.handleLocationSelection
+      );
 
       suggestionContainer.appendChild(newSearchSuggestionEl);
     }
