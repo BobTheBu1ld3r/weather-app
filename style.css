@@ -72,10 +72,6 @@ input#search {
   display: inline-flex;
 }
 
-.suggestion-name::after {
-  content: ", ";
-}
-
 .weather-info-container {
   width: 650px;
   margin: 68px auto 0px auto;
