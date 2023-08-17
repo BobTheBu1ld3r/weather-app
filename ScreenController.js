@@ -1,6 +1,6 @@
 export default class ScreenController {
   renderSearchSuggestions(data) {
-    const searchContainer = document.querySelector(".suggestion-container");
+    const suggestionContainer = document.querySelector(".suggestion-container");
 
     for (let location of data) {
       const newSearchSuggestionEl = document.createElement("div");
@@ -11,7 +11,12 @@ export default class ScreenController {
 
       newSearchSuggestionEl.appendChild(newSuggestionNameEl);
 
-      searchContainer.appendChild(newSearchSuggestionEl);
+      suggestionContainer.appendChild(newSearchSuggestionEl);
     }
+  }
+
+  resetSearchSuggestions() {
+    const suggestionContainer = document.querySelector(".suggestion-container");
+    suggestionContainer.innerHTML = null;
   }
 }
