@@ -147,20 +147,20 @@ input#search {
   justify-content: start;
 }
 
-.day-info-container:first-of-type {
+.day-info-container.active {
   background-color: var(--grey-bcg-1);
   border-top: 1px solid var(--grey-accent-1);
 }
 
-.day-info-container:first-of-type .day {
+.day-info-container.active .day {
   color: var(--white-color-1);
 }
 
-.day-info-container:first-of-type .day-max-temp {
+.day-info-container.active .day-max-temp {
   color: var(--white-color-1);
 }
 
-.day-info-container:first-of-type .day-min-temp {
+.day-info-container.active .day-min-temp {
   color: var(--white-color-1);
 }
 
