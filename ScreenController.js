@@ -25,4 +25,25 @@ export default class ScreenController {
     const suggestionContainer = document.querySelector(".suggestion-container");
     suggestionContainer.innerHTML = null;
   }
+
+  renderDailyInfo(data) {
+    const dayInfoContainers = document.querySelectorAll(".day-info-container");
+    dayInfoContainers.forEach((container, index) => {
+      const dayOfWeek = data[index].dayOfWeek;
+      const iconUrl = data[index].iconUrl;
+      const maxTemp = data[index].maxTemp + "°";
+      const minTemp = data[index].minTemp + "°";
+
+      container.querySelector(".day").textContent = dayOfWeek;
+      container.querySelector(".day-icon").src = iconUrl;
+      container.querySelector(".day-max-temp").textContent = maxTemp;
+      container.querySelector(".day-min-temp").textContent = minTemp;
+    });
+  }
+
+  renderHourlyInfo(data) {
+    const hourlyInfoContainer = document.querySelector(
+      ".hourly-info-container"
+    );
+  }
 }
