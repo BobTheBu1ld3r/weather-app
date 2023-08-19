@@ -30,6 +30,14 @@ export default class ScreenController {
     suggestionContainer.innerHTML = null;
   }
 
+  renderActiveDay(element) {
+    const dayInfoContainers = document.querySelectorAll(".day-info-container");
+    dayInfoContainers.forEach((container) => {
+      container.classList.remove("active");
+    });
+    element.classList.add("active");
+  }
+
   renderDailyInfo(data) {
     const dayInfoContainers = document.querySelectorAll(".day-info-container");
     dayInfoContainers.forEach((container, index) => {
