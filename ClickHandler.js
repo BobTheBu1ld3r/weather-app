@@ -9,7 +9,7 @@ import {
 let hourlyInfo = null;
 
 export default class ClickHandler {
-  async handleLocationSelection(event) {
+  async handleSuggestionSelection(event) {
     const suggestionElement = event.target;
     const url = suggestionElement.dataset.url;
     const infoString = suggestionElement.dataset.infoString;
@@ -20,7 +20,6 @@ export default class ClickHandler {
   handleDaySelection(event) {
     const dayElement = event.currentTarget;
     const dayIndex = dayElement.dataset.dayIndex;
-    screenController.renderActiveDay(dayElement);
-    screenController.renderDayInfo(hourlyInfo[dayIndex]);
+    displayCoordinator.displayDayForecast(dayIndex);
   }
 }

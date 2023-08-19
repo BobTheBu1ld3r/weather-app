@@ -18,7 +18,7 @@ export default class ScreenController {
 
       newSearchSuggestionEl.addEventListener(
         "click",
-        clickHandler.handleLocationSelection
+        clickHandler.handleSuggestionSelection
       );
 
       suggestionContainer.appendChild(newSearchSuggestionEl);
