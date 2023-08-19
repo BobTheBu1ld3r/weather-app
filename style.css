@@ -143,20 +143,24 @@ input#search {
   justify-content: start;
 }
 
-.day-info-container.active {
+.day-info-container.active,
+.day-info-container:hover {
   background-color: var(--grey-bcg-1);
   border-top: 1px solid var(--grey-accent-1);
 }
 
-.day-info-container.active .day {
+.day-info-container.active .day,
+.day-info-container:hover .day {
   color: var(--white-color-1);
 }
 
-.day-info-container.active .day-max-temp {
+.day-info-container.active .day-max-temp,
+.day-info-container:hover .day-max-temp {
   color: var(--white-color-1);
 }
 
-.day-info-container.active .day-min-temp {
+.day-info-container.active .day-min-temp,
+.day-info-container:hover .day-min-temp {
   color: var(--white-color-1);
 }
 
