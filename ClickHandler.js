@@ -1,10 +1,4 @@
-import {
-  fetchController,
-  dataInterfacer,
-  screenController,
-  clickHandler,
-  displayCoordinator,
-} from "./main.js";
+import { displayCoordinator } from "./main.js";
 
 let hourlyInfo = null;
 

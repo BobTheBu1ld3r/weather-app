@@ -1,10 +1,4 @@
-import {
-  fetchController,
-  dataInterfacer,
-  screenController,
-  clickHandler,
-  displayCoordinator,
-} from "./main.js";
+import { fetchController, dataInterfacer, screenController } from "./main.js";
 
 export default class DisplayCoordinator {
   async displayWeatherForecast(url, infoString) {

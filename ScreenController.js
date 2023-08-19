@@ -1,9 +1,4 @@
-import {
-  fetchController,
-  dataInterfacer,
-  screenController,
-  clickHandler,
-} from "./main.js";
+import { clickHandler } from "./main.js";
 
 export default class ScreenController {
   renderSearchSuggestions(data) {
