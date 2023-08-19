@@ -15,7 +15,7 @@ export default class ClickHandler {
     const infoString = suggestionElement.dataset.infoString;
 
     await displayCoordinator.displayWeatherForecast(url, infoString);
-    displayCoordinator.displayDayForecast(0);
+    displayCoordinator.displayDayForecast();
   }
 
   handleDaySelection(event) {
