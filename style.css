@@ -43,7 +43,7 @@ input#search {
   width: 646px;
   padding: 18px 20px;
   border: none;
-  color: var(--white-color-1);
+  color: var(--white-color-2);
   font-weight: 600;
   font-size: 18px;
 }
@@ -153,7 +153,7 @@ input#search:focus-visible {
   height: 120px;
   width: 650px;
   margin: auto;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0px 0px 8px 8px;
   background-color: var(--grey-bcg-2);
 
   display: grid;
