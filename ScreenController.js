@@ -1,5 +1,9 @@
-import ClickHandler from "./ClickHandler.js";
-const clickHandler = new ClickHandler();
+import {
+  fetchController,
+  dataInterfacer,
+  screenController,
+  clickHandler,
+} from "./main.js";
 
 export default class ScreenController {
   renderSearchSuggestions(data) {
@@ -38,6 +42,7 @@ export default class ScreenController {
       container.querySelector(".day-icon").src = iconUrl;
       container.querySelector(".day-max-temp").textContent = maxTemp;
       container.querySelector(".day-min-temp").textContent = minTemp;
+      container.dataset.dayIndex = index;
     });
   }
 
