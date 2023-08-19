@@ -4,6 +4,10 @@ import DataInterfacer from "./DataInterfacer.js";
 const dataInterfacer = new DataInterfacer();
 import ScreenController from "./ScreenController.js";
 const screenController = new ScreenController();
+import ClickHandler from "./ClickHandler.js";
+const clickHandler = new ClickHandler();
+import DisplayCoordinator from "./DisplayCoordinator.js";
+const displayCoordinator = new DisplayCoordinator();
 
 const searchInput = document.querySelector("input#search");
 
@@ -16,4 +20,21 @@ searchInput.addEventListener("input", async function handleSearch() {
   screenController.renderSearchSuggestions(parsedData);
 });
 
-export default screenController;
+const dayInfoContainers = document.querySelectorAll(".day-info-container");
+dayInfoContainers.forEach((container) =>
+  container.addEventListener("click", clickHandler.handleDaySelection)
+);
+
+displayCoordinator
+  .displayWeatherForecast("london", "London, Greater London, United Kingdom")
+  .then((res) => {
+    displayCoordinator.displayDayForecast(0);
+  });
+
+export {
+  fetchController,
+  dataInterfacer,
+  screenController,
+  clickHandler,
+  displayCoordinator,
+};
