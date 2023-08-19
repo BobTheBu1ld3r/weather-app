@@ -22,7 +22,7 @@ export default class DataInterfacer {
     return forecastArray.map((forecastday) => {
       return {
         dayOfWeek: getDayOfWeek(forecastday.date),
-        iconUrl: forecastday.day.condition.icon.slice(2),
+        iconUrl: forecastday.day.condition.icon,
         maxTemp: forecastday.day.maxtemp_c,
         minTemp: forecastday.day.mintemp_c,
       };
@@ -52,7 +52,7 @@ export default class DataInterfacer {
       }
       const formattedHours = hours.map((hour) => {
         const formattedTime = convertTimeFormat(hour.time);
-        const iconUrl = hour.condition.icon.slice(2);
+        const iconUrl = hour.condition.icon;
         const avgtemp = hour.temp_c;
         return {
           formattedTime,
