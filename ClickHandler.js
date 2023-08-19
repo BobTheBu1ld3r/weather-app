@@ -1,16 +1,26 @@
-import { fetchController, dataInterfacer, screenController } from "./main.js";
+import {
+  fetchController,
+  dataInterfacer,
+  screenController,
+  clickHandler,
+  displayCoordinator,
+} from "./main.js";
+
+let hourlyInfo = null;
 
 export default class ClickHandler {
   async handleLocationSelection(event) {
-    const url = event.target.dataset.url;
-    const infoString = event.target.dataset.infoString;
-    const input = document.querySelector("input#search");
-    input.value = infoString;
-    screenController.resetSearchSuggestions();
-    const data = await fetchController.fetchForecast(url);
-    const parsedData = dataInterfacer.dailyForecastParser(data);
-    screenController.renderDailyInfo(parsedData);
+    const suggestionElement = event.target;
+    const url = suggestionElement.dataset.url;
+    const infoString = suggestionElement.dataset.infoString;
+
+    displayCoordinator.displayWeatherForecast(url, infoString);
   }
 
-  handleDaySelection(event) {}
+  handleDaySelection(event) {
+    const dayElement = event.currentTarget;
+    const dayIndex = dayElement.dataset.dayIndex;
+    screenController.renderActiveDay(dayElement);
+    screenController.renderDayInfo(hourlyInfo[dayIndex]);
+  }
 }
