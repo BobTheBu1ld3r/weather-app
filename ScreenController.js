@@ -43,8 +43,8 @@ export default class ScreenController {
     dayInfoContainers.forEach((container, index) => {
       const dayOfWeek = data[index].dayOfWeek;
       const iconUrl = data[index].iconUrl;
-      const maxTemp = data[index].maxTemp + "°";
-      const minTemp = data[index].minTemp + "°";
+      const maxTemp = data[index].maxTemp;
+      const minTemp = data[index].minTemp;
 
       container.querySelector(".day").textContent = dayOfWeek;
       container.querySelector(".day-icon").src = iconUrl;
@@ -52,6 +52,13 @@ export default class ScreenController {
       container.querySelector(".day-min-temp").textContent = minTemp;
       container.dataset.dayIndex = index;
     });
+  }
+
+  renderDayInfo(dayInfo) {
+    console.log(dayInfo);
+    document.querySelector(".day-text").textContent = dayInfo.text;
+    document.querySelector(".humidity").textContent = dayInfo.averageHumidity;
+    document.querySelector(".wind-speed").textContent = dayInfo.maxWind;
   }
 
   renderHourlyInfo(data) {

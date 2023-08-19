@@ -23,8 +23,8 @@ export default class DataInterfacer {
       return {
         dayOfWeek: getDayOfWeek(forecastday.date),
         iconUrl: forecastday.day.condition.icon,
-        maxTemp: forecastday.day.maxtemp_c,
-        minTemp: forecastday.day.mintemp_c,
+        maxTemp: forecastday.day.maxtemp_c + "°",
+        minTemp: forecastday.day.mintemp_c + "°",
       };
     });
   }
@@ -53,7 +53,7 @@ export default class DataInterfacer {
       const formattedHours = hours.map((hour) => {
         const formattedTime = convertTimeFormat(hour.time);
         const iconUrl = hour.condition.icon;
-        const avgtemp = hour.temp_c;
+        const avgtemp = hour.temp_c + "°";
         return {
           formattedTime,
           iconUrl,
@@ -61,13 +61,13 @@ export default class DataInterfacer {
         };
       });
       const text = forecastday.day.condition.text;
-      const averageHumidity = forecastday.day.avghumidity;
+      const averageHumidity = forecastday.day.avghumidity + "%";
       const maxWind = forecastday.day.maxwind_mph;
 
       return {
         text,
         formattedHours,
-        avergageHumidity,
+        averageHumidity,
         maxWind,
       };
     });
