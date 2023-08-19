@@ -61,7 +61,7 @@ export default class DataInterfacer {
         };
       });
       const text = forecastday.day.condition.text;
-      const avergageHumidity = forecastday.day.avghumidity;
+      const averageHumidity = forecastday.day.avghumidity;
       const maxWind = forecastday.day.maxwind_mph;
 
       return {
