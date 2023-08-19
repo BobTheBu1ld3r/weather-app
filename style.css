@@ -114,6 +114,10 @@ input#search {
   color: white;
 }
 
+.icon {
+  height: 40px;
+}
+
 .hour-container:first-of-type > .hour-time {
   font-size: 14px;
   font-weight: 600;
@@ -188,7 +192,6 @@ input#search {
 
 .day-icon {
   margin: 4px 0;
-  height: 40px;
 }
 
 h3 {
