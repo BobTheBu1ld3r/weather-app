@@ -43,6 +43,16 @@ input#search {
   width: 646px;
   padding: 18px 20px;
   border: none;
+  color: var(--white-color-1);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+input#search:active,
+input#search:focus,
+input#search:focus-visible {
+  outline: none;
+  background-color: var(--grey-bcg-1);
 }
 
 .suggestion-container {
