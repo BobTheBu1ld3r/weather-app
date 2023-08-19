@@ -53,11 +53,11 @@ export default class DataInterfacer {
       const formattedHours = hours.map((hour) => {
         const formattedTime = convertTimeFormat(hour.time);
         const iconUrl = hour.condition.icon;
-        const avgtemp = hour.temp_c + "°";
+        const avgTemp = Math.round(hour.temp_c) + "°";
         return {
           formattedTime,
           iconUrl,
-          avgtemp,
+          avgTemp,
         };
       });
       const text = forecastday.day.condition.text;
