@@ -56,6 +56,13 @@ export default class ScreenController {
     this.renderHourlyInfo(dayInfo);
   }
 
+  renderLocationData(infoString) {
+    const input = document.querySelector("input#search");
+    input.value = infoString;
+    const location = document.querySelector(".location");
+    location.textContent = infoString;
+  }
+
   renderHourlyInfo(data) {
     const hourContainers = document.querySelectorAll(".hour-container");
     hourContainers.forEach((hourContainer, index) => {

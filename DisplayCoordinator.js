@@ -2,8 +2,7 @@ import { fetchController, dataInterfacer, screenController } from "./main.js";
 
 export default class DisplayCoordinator {
   async displayWeatherForecast(url, infoString) {
-    const input = document.querySelector("input#search");
-    input.value = infoString;
+    screenController.renderLocationData(infoString);
     screenController.resetSearchSuggestions();
     const data = await fetchController.fetchForecast(url);
     const parsedDailyData = dataInterfacer.dailyForecastParser(data);
