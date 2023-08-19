@@ -17,7 +17,7 @@ export default class DisplayCoordinator {
     screenController.renderDailyInfo(parsedDailyData);
   }
 
-  async displayDayForecast(dayIndex) {
+  async displayDayForecast(dayIndex = 0) {
     const dayElement = Array.from(
       document.querySelectorAll(".day-info-container")
     )[dayIndex];
