@@ -55,15 +55,21 @@ export default class ScreenController {
   }
 
   renderDayInfo(dayInfo) {
-    console.log(dayInfo);
     document.querySelector(".day-text").textContent = dayInfo.text;
     document.querySelector(".humidity").textContent = dayInfo.averageHumidity;
     document.querySelector(".wind-speed").textContent = dayInfo.maxWind;
+    this.renderHourlyInfo(dayInfo);
   }
 
   renderHourlyInfo(data) {
-    const hourlyInfoContainer = document.querySelector(
-      ".hourly-info-container"
-    );
+    const hourContainers = document.querySelectorAll(".hour-container");
+    hourContainers.forEach((hourContainer, index) => {
+      hourContainer.querySelector(".hour-time").textContent =
+        data.formattedHours[index].formattedTime;
+      hourContainer.querySelector(".hour-icon").src =
+        data.formattedHours[index].iconUrl;
+      hourContainer.querySelector(".hour-temperature").textContent =
+        data.formattedHours[index].avgTemp;
+    });
   }
 }
