@@ -78,6 +78,10 @@ input#search:focus-visible {
   align-items: center;
 }
 
+.search-suggestion:hover {
+  background-color: var(--grey-bcg-2);
+}
+
 .search-suggestion > * {
   display: inline-flex;
 }
