@@ -1,3 +1,5 @@
+import { fetchController, dataInterfacer, displayCoordinator } from "./main.js";
+
 export default class GeolocationController {
   getLocation() {
     if (navigator.geolocation) {
@@ -5,9 +7,17 @@ export default class GeolocationController {
     }
   }
 
-  handleGeolocation(position) {
-    console.log(position.coords.latitude);
-    console.log(position.coords.longitude);
+  async handleGeolocation(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    const searchString = `${latitude},${longitude}`;
+    const data = await fetchController.fetchSearchSuggestions(searchString);
+    const urlData = dataInterfacer.parseUrl(data);
+    displayCoordinator
+      .displayWeatherForecast(urlData.url, urlData.infoString)
+      .then((res) => {
+        displayCoordinator.displayDayForecast(0);
+      });
   }
 }
 

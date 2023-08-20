@@ -72,6 +72,16 @@ export default class DataInterfacer {
       };
     });
   }
+
+  parseUrl(data) {
+    const location = data[0];
+    const infoString = `${location.name}, ${location.region}, ${location.country}`;
+    const url = data[0].url;
+    return {
+      url,
+      infoString,
+    };
+  }
 }
 
 function getDayOfWeek(date) {
