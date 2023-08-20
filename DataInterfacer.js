@@ -23,8 +23,8 @@ export default class DataInterfacer {
       return {
         dayOfWeek: getDayOfWeek(forecastday.date),
         iconUrl: forecastday.day.condition.icon,
-        maxTemp: forecastday.day.maxtemp_c + "°",
-        minTemp: forecastday.day.mintemp_c + "°",
+        maxTemp: Math.round(forecastday.day.maxtemp_c) + "°",
+        minTemp: Math.round(forecastday.day.mintemp_c) + "°",
       };
     });
   }
