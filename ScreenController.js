@@ -49,10 +49,17 @@ export default class ScreenController {
     });
   }
 
-  renderDayInfo(dayInfo) {
+  renderDayInfo(dayInfo, dayIndex) {
     document.querySelector(".day-text").textContent = dayInfo.text;
     document.querySelector(".humidity").textContent = dayInfo.averageHumidity;
     document.querySelector(".wind-speed").textContent = dayInfo.maxWind;
+    const hourContainers = Array.from(
+      document.querySelectorAll(".hour-container")
+    );
+    hourContainers[0].classList.remove("current-hour");
+    if (dayIndex == 0) {
+      hourContainers[0].classList.add("current-hour");
+    }
     this.renderHourlyInfo(dayInfo);
   }
 

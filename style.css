@@ -43,7 +43,7 @@ input#search {
   width: 646px;
   padding: 18px 20px;
   border: none;
-  color: var(--white-color-2);
+  color: var(--white-color-1);
   font-weight: 600;
   font-size: 18px;
 }
@@ -111,7 +111,7 @@ input#search:focus-visible {
   align-content: start;
 }
 
-.hour-container:not(.hour-container:first-of-type) {
+.hour-container:not(.hour-container.current-hour) {
   padding-top: 12px;
   gap: 5px;
 }
@@ -132,18 +132,18 @@ input#search:focus-visible {
   height: 40px;
 }
 
-.hour-container:first-of-type > .hour-time {
+.hour-container.current-hour > .hour-time {
   font-size: 14px;
   font-weight: 600;
   color: white;
 }
 
-.hour-container:first-of-type > .hour-icon {
+.hour-container.current-hour > .hour-icon {
   height: 60px;
   width: 60px;
 }
 
-.hour-container:first-child > .hour-temperature {
+.hour-container.current-hour > .hour-temperature {
   font-size: 44px;
   font-weight: 500;
   color: white;

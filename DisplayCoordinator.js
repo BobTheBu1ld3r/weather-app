@@ -15,7 +15,7 @@ export default class DisplayCoordinator {
       document.querySelectorAll(".day-info-container")
     )[dayIndex];
     screenController.renderActiveDay(dayElement);
-    screenController.renderDayInfo(hourlyInfo[dayIndex]);
+    screenController.renderDayInfo(hourlyInfo[dayIndex], dayIndex);
   }
 
   getHourlyInfo() {
