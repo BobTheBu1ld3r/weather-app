@@ -57,11 +57,25 @@ input#search:focus-visible {
 
 .suggestion-container {
   height: 124px;
-  overflow: hidden;
+  overflow: auto;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.suggestion-container::-webkit-scrollbar {
+  width: 5px;
+  background-color: none;
+  position: relative;
+  left: 20px;
+}
+
+.suggestion-container::-webkit-scrollbar-thumb {
+  background-color: var(--grey-accent-1);
+  width: 5px;
+  height: 40px;
+  border-radius: 3px;
 }
 
 .search-suggestion {
