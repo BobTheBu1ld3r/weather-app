@@ -8,6 +8,8 @@ import ClickHandler from "./ClickHandler.js";
 const clickHandler = new ClickHandler();
 import DisplayCoordinator from "./DisplayCoordinator.js";
 const displayCoordinator = new DisplayCoordinator();
+import GeolocationController from "./GeolocationController.js";
+const geolocationController = new GeolocationController();
 
 const searchInput = document.querySelector("input#search");
 
@@ -29,6 +31,8 @@ displayCoordinator.displayStart(
   "london",
   "London, Greater London, United Kingdom"
 );
+
+geolocationController.getLocation();
 
 export {
   fetchController,
