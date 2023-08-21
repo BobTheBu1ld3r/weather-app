@@ -13,13 +13,6 @@ export default class GeolocationController {
     const searchString = `${latitude},${longitude}`;
     const data = await fetchController.fetchSearchSuggestions(searchString);
     const urlData = dataInterfacer.parseUrl(data);
-    displayCoordinator
-      .displayWeatherForecast(urlData.url, urlData.infoString)
-      .then((res) => {
-        displayCoordinator.displayDayForecast(0);
-      });
+    displayCoordinator.displayStart(urlData.url, urlData.infoString);
   }
 }
-
-const geolocationController = new GeolocationController();
-geolocationController.getLocation();

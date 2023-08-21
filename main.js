@@ -25,11 +25,10 @@ dayInfoContainers.forEach((container) =>
   container.addEventListener("click", clickHandler.handleDaySelection)
 );
 
-displayCoordinator
-  .displayWeatherForecast("london", "London, Greater London, United Kingdom")
-  .then((res) => {
-    displayCoordinator.displayDayForecast(0);
-  });
+displayCoordinator.displayStart(
+  "london",
+  "London, Greater London, United Kingdom"
+);
 
 export {
   fetchController,
