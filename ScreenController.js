@@ -43,12 +43,13 @@ export default class ScreenController {
       const minTemp = day.minTemp;
 
       const newDayInfoContainer = document.createElement("div");
-      newDayInfoContainer.innerHTML = `      <div class="day-info-container">
+      newDayInfoContainer.innerHTML = `      
         <div class="day body-2 white-color-2">${dayOfWeek}</div>
         <img class="icon day-icon" src="${iconUrl}" alt="" />
         <div class="day-max-temp body-1 white-color-2">${maxTemp}</div>
         <div class="day-min-temp body-2 white-color-2">${minTemp}</div>
-      </div>`;
+      `;
+      newDayInfoContainer.classList.add("day-info-container");
       newDayInfoContainer.dataset.dayIndex = index;
       newDayInfoContainer.addEventListener(
         "click",
