@@ -20,7 +20,7 @@ export default class DisplayCoordinator {
 
   async displayStart(url, infoString) {
     await this.displayWeatherForecast(url, infoString);
-    this.displayDayForecast(0);
+    this.displayDayForecast();
   }
 
   getHourlyInfo() {
