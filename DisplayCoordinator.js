@@ -18,6 +18,11 @@ export default class DisplayCoordinator {
     screenController.renderDayInfo(hourlyInfo[dayIndex], dayIndex);
   }
 
+  async displayStart(url, infoString) {
+    await this.displayWeatherForecast(url, infoString);
+    this.displayDayForecast(0);
+  }
+
   getHourlyInfo() {
     return hourlyInfo;
   }
