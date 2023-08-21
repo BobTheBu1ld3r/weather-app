@@ -22,11 +22,6 @@ searchInput.addEventListener("input", async function handleSearch() {
   screenController.renderSearchSuggestions(parsedData);
 });
 
-const dayInfoContainers = document.querySelectorAll(".day-info-container");
-dayInfoContainers.forEach((container) =>
-  container.addEventListener("click", clickHandler.handleDaySelection)
-);
-
 displayCoordinator.displayStart(
   "london",
   "London, Greater London, United Kingdom"

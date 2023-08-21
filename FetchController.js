@@ -1,7 +1,7 @@
 export default class FetchController {
   constructor() {
     this.API_KEY = "ff89deb859334f57bbb115524233107";
-    this.FORECAST_DAYS = "8";
+    this.FORECAST_DAYS = "3";
   }
 
   async fetchSearchSuggestions(searchString) {
