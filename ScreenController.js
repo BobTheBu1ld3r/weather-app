@@ -34,18 +34,27 @@ export default class ScreenController {
   }
 
   renderDailyInfo(data) {
-    const dayInfoContainers = document.querySelectorAll(".day-info-container");
-    dayInfoContainers.forEach((container, index) => {
-      const dayOfWeek = data[index].dayOfWeek;
-      const iconUrl = data[index].iconUrl;
-      const maxTemp = data[index].maxTemp;
-      const minTemp = data[index].minTemp;
+    const dailyInfoContainer = document.querySelector(".daily-info-container");
+    dailyInfoContainer.innerHTML = "";
+    data.forEach((day, index) => {
+      const dayOfWeek = day.dayOfWeek;
+      const iconUrl = day.iconUrl;
+      const maxTemp = day.maxTemp;
+      const minTemp = day.minTemp;
 
-      container.querySelector(".day").textContent = dayOfWeek;
-      container.querySelector(".day-icon").src = iconUrl;
-      container.querySelector(".day-max-temp").textContent = maxTemp;
-      container.querySelector(".day-min-temp").textContent = minTemp;
-      container.dataset.dayIndex = index;
+      const newDayInfoContainer = document.createElement("div");
+      newDayInfoContainer.innerHTML = `      <div class="day-info-container">
+        <div class="day body-2 white-color-2">${dayOfWeek}</div>
+        <img class="icon day-icon" src="${iconUrl}" alt="" />
+        <div class="day-max-temp body-1 white-color-2">${maxTemp}</div>
+        <div class="day-min-temp body-2 white-color-2">${minTemp}</div>
+      </div>`;
+      newDayInfoContainer.dataset.dayIndex = index;
+      newDayInfoContainer.addEventListener(
+        "click",
+        clickHandler.handleDaySelection
+      );
+      dailyInfoContainer.appendChild(newDayInfoContainer);
     });
   }
 
